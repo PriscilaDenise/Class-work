@@ -1,55 +1,62 @@
 <!DOCTYPE html>
-<html lan = 'en'>
+<html lang="en">
     <head>
         <title>Dynamic</title>
-        <link rel="stylesheet" href = "style/general.css">
+        <link rel="stylesheet" href="style/general.css">
         <!-- <style>
             body {
                 background-color: aquamarine;
             }
         </style> -->
 
-        <script src="action/actions_it.js">
-
-        </script>
+        <script src="action/actions_it.js"></script>
     </head>
 
     <body onload="greet()">
-        <button onclick ="alert('Hello Denise Priscila ☺️')"> CLICK ME  </button>
+        <button onclick="alert('Hello Denise Priscila ☺️')">CLICK ME</button>
 
-        <p id="text"> This is my first HTML, CSS and JS fusion. </p>
+        <p id="text">This is my first HTML, CSS and JS fusion.</p>
 
-        <button onclick ="Toggle()"> Change the text</button>
+        <button onclick="Toggle()">Change the text</button>
 
         <button id="click">Internal Java Script Click</button>
 
-        <button id="change"> Change color</button>
+        <button id="change">Change color</button>
+
+        <!-- Color Picker -->
+        <input type="color" id="colorPicker">
 
         <script>
             // function greet() {
-            //     alert ('Welcome to the dynamic world.')
+            //     alert('Welcome to the dynamic world.')
             // }
 
             function Toggle() {
-                var text= document.getElementById("text");
-                if (text.innerHTML === "This is my first HTML, CSS and JS fusion."){
+                var text = document.getElementById("text");
+                if (text.innerHTML === "This is my first HTML, CSS and JS fusion.") {
                     text.innerHTML = "Internal Java Script Click";
                 } else {
                     text.innerHTML = "This is my first HTML, CSS and JS fusion.";
                 }
             }
 
-            document.getElementById("change").onclick=function(){
-                document.body.style.backgroundColor = "red";
+            document.getElementById("change").onclick = function () {
+                let color = document.getElementById("colorPicker").value;
+                if (color) {
+                    document.body.style.backgroundColor = color;
+                } else {
+                    // Provide default color if input is empty
+                    document.body.style.backgroundColor = "aquamarine";
+                }
             }
 
-            const buttonId = document.getElementById("click")
-            buttonId.onclick= function(){
-                alert("Button was clicked.")
+            const buttonId = document.getElementById("click");
+            buttonId.onclick = function () {
+                alert("Button was clicked.");
             }
 
-            buttonId.onmouseover= function(){
-                buttonId.style.color= "red"
+            buttonId.onmouseover = function () {
+                buttonId.style.color = "red";
             }
         </script>
     </body>
